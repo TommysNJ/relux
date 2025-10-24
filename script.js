@@ -121,15 +121,15 @@ window.addEventListener('DOMContentLoaded', mostrarTodosLosProductos);
 const inicio = document.getElementById('inicio');
 const btnEmpezar = document.getElementById('btn-empezar');
 
-// Bloquea el scroll mientras está en la pantalla de inicio
-document.body.style.overflow = "hidden";
+// 🚫 Bloquear scroll completamente al inicio
+document.body.classList.add('no-scroll');
 
 btnEmpezar.addEventListener('click', () => {
   inicio.classList.add('oculto');
 
-  // Restaura el scroll después de desaparecer
+  // ✅ Restaura scroll después de desaparecer
   setTimeout(() => {
     inicio.style.display = 'none';
-    document.body.style.overflow = "auto";
+    document.body.classList.remove('no-scroll');
   }, 600); // mismo tiempo que el fade-out
 });
