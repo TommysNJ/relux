@@ -9,17 +9,29 @@ const header = document.querySelector('.header'); // ✅ Header
 
 const productos = {
   chompas: [
-    { titulo: 'Chompa Azul', precio: '$25', imagen: 'img/chompa_azul.png', descripcion: 'Chompa cómoda de lana.', materiales: 'Lana, algodón' },
-    { titulo: 'Chompa Roja', precio: '$30', imagen: 'img/chompa_roja.png', descripcion: 'Chompa ligera para el frío.', materiales: 'Algodón, poliéster' }
-  ],
-  zapatos: [
-    { titulo: 'Zapatos Negros', precio: '$45', imagen: 'img/zapatos_negros.png', descripcion: 'Zapatos elegantes para toda ocasión.', materiales: 'Cuero sintético' }
-  ],
-  camisetas: [
+    { titulo: 'Chompa Azul', precio: '$25', imagen: 'img/camiseta_negra.jpeg', descripcion: 'Chompa cómoda de lana.', materiales: 'Lana, algodón' },
+    { titulo: 'Chompa Roja', precio: '$30', imagen: 'img/chompa_roja.png', descripcion: 'Chompa ligera para el frío.', materiales: 'Algodón, poliéster' },
+    { titulo: 'Camiseta Roja', precio: '$15', imagen: 'img/camiseta_roja.png', descripcion: 'Camiseta básica de algodón.', materiales: 'Algodón 100%' },
+    { titulo: 'Camiseta Roja', precio: '$15', imagen: 'img/camiseta_roja.png', descripcion: 'Camiseta básica de algodón.', materiales: 'Algodón 100%' },
     { titulo: 'Camiseta Roja', precio: '$15', imagen: 'img/camiseta_roja.png', descripcion: 'Camiseta básica de algodón.', materiales: 'Algodón 100%' }
   ],
+  zapatos: [
+    { titulo: 'Zapatos Negros', precio: '$45', imagen: 'img/zapatos_negros.png', descripcion: 'Zapatos elegantes para toda ocasión.', materiales: 'Cuero sintético' },
+    { titulo: 'Camiseta Roja', precio: '$15', imagen: 'img/camiseta_negra.jpeg', descripcion: 'Camiseta básica de algodón.', materiales: 'Algodón 100%' },
+    { titulo: 'Camiseta Roja', precio: '$15', imagen: 'img/camiseta_negra.jpeg', descripcion: 'Camiseta básica de algodón.', materiales: 'Algodón 100%' },
+    { titulo: 'Camiseta Roja', precio: '$15', imagen: 'img/camiseta_roja.png', descripcion: 'Camiseta básica de algodón.', materiales: 'Algodón 100%' }
+  ],
+  camisetas: [
+    { titulo: 'Camiseta Roja', precio: '$15', imagen: 'img/camiseta_roja.png', descripcion: 'Camiseta básica de algodón.', materiales: 'Algodón 100%' },
+    { titulo: 'Camiseta Roja', precio: '$15', imagen: 'img/camiseta_negra.jpeg', descripcion: 'Camiseta básica de algodón.', materiales: 'Algodón 100%' },
+    { titulo: 'Camiseta Roja', precio: '$15', imagen: 'img/camiseta_roja.png', descripcion: 'Camiseta básica de algodón.', materiales: 'Algodón 100%' },
+    { titulo: 'Camiseta Roja', precio: '$15', imagen: 'img/camiseta_negra.jpeg', descripcion: 'Camiseta básica de algodón.', materiales: 'Algodón 100%' }
+  ],
   accesorios: [
-    { titulo: 'Gorra Negra', precio: '$10', imagen: 'img/gorra_negra.png', descripcion: 'Gorra con diseño minimalista.', materiales: 'Poliéster' }
+    { titulo: 'Gorra Negra', precio: '$10', imagen: 'img/gorra_negra.png', descripcion: 'Gorra con diseño minimalista.', materiales: 'Poliéster' },
+    { titulo: 'Camiseta Roja', precio: '$15', imagen: 'img/camiseta_negra.jpeg', descripcion: 'Camiseta básica de algodón.', materiales: 'Algodón 100%' },
+    { titulo: 'Camiseta Roja', precio: '$15', imagen: 'img/camiseta_negra.jpeg', descripcion: 'Camiseta básica de algodón.', materiales: 'Algodón 100%' },
+    { titulo: 'Camiseta Roja', precio: '$15', imagen: 'img/camiseta_roja.png', descripcion: 'Camiseta básica de algodón.', materiales: 'Algodón 100%' }
   ]
 };
 
@@ -104,3 +116,20 @@ window.addEventListener('click', e => {
 });
 
 window.addEventListener('DOMContentLoaded', mostrarTodosLosProductos);
+
+// === INICIO (PANTALLA DE PRESENTACIÓN) ===
+const inicio = document.getElementById('inicio');
+const btnEmpezar = document.getElementById('btn-empezar');
+
+// Bloquea el scroll mientras está en la pantalla de inicio
+document.body.style.overflow = "hidden";
+
+btnEmpezar.addEventListener('click', () => {
+  inicio.classList.add('oculto');
+
+  // Restaura el scroll después de desaparecer
+  setTimeout(() => {
+    inicio.style.display = 'none';
+    document.body.style.overflow = "auto";
+  }, 600); // mismo tiempo que el fade-out
+});

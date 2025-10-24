@@ -1,50 +1,59 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Catálogo Minimalista</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <!-- Barra superior flotante -->
-  <header class="header">
-    <div class="menu-toggle" id="menu-toggle">☰</div>
-    <h1 class="brand-phrase">Tu estilo, tu esencia.</h1>
-    <img src="img/logo.jpeg" alt="Logo" class="logo" />
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catálogo Minimalista</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Pantalla de inicio -->
+    <section class="inicio" id="inicio">
+      <div class="inicio-contenedor">
+        <img src="img/logo.jpeg" alt="Logo" class="inicio-logo" />
+        <h2 class="inicio-frase">Descubre tu esencia.</h2>
+        <p class="inicio-subfrase">Minimalismo, elegancia y autenticidad.</p>
+        <button class="inicio-boton" id="btn-empezar">Empezar</button>
+      </div>
+    </section>
+    <!-- Barra superior flotante -->
+    <header class="header">
+      <div class="menu-toggle" id="menu-toggle">☰</div>
+      <h1 class="brand-phrase">Tu estilo, tu esencia.</h1>
+      <img src="img/logo.jpeg" alt="Logo" class="logo" />
+    </header>
 
-  <!-- Menú lateral -->
-  <nav class="menu" id="menu">
-    <div class="menu-header">
-      <button class="menu-close" id="close-menu">&times;</button>
+    <!-- Menú lateral -->
+    <nav class="menu" id="menu">
+      <div class="menu-header">
+        <button class="menu-close" id="close-menu">&times;</button>
+      </div>
+      <ul>
+        <li data-category="todos" class="active">Todos los productos</li>
+        <li data-category="chompas">Chompas</li>
+        <li data-category="zapatos">Zapatos</li>
+        <li data-category="camisetas">Camisetas</li>
+        <li data-category="accesorios">Accesorios</li>
+      </ul>
+    </nav>
+
+    <!-- Catálogo principal -->
+    <main class="catalogo" id="catalogo"></main>
+
+    <!-- Modal -->
+    <div class="modal" id="modal">
+      <div class="modal-content">
+        <span class="close" id="close-modal">&times;</span>
+        <img id="modal-img" alt="" />
+        <h2 id="modal-title"></h2>
+        <p id="modal-desc"></p>
+        <p id="modal-materiales"></p>
+        <p id="modal-precio"></p>
+      </div>
     </div>
-    <ul>
-      <li data-category="todos" class="active">Todos los productos</li>
-      <li data-category="chompas">Chompas</li>
-      <li data-category="zapatos">Zapatos</li>
-      <li data-category="camisetas">Camisetas</li>
-      <li data-category="accesorios">Accesorios</li>
-    </ul>
-  </nav>
 
-  <!-- Catálogo principal -->
-  <main class="catalogo" id="catalogo"></main>
-
-  <!-- Modal -->
-  <div class="modal" id="modal">
-    <div class="modal-content">
-      <span class="close" id="close-modal">&times;</span>
-      <img id="modal-img" alt="">
-      <h2 id="modal-title"></h2>
-      <p id="modal-desc"></p>
-      <p id="modal-materiales"></p>
-      <p id="modal-precio"></p>
-    </div>
-  </div>
-
-  <!-- Capa de desenfoque -->
-  <div class="overlay" id="overlay"></div>
-  <script src="script.js"></script>
-</body>
+    <!-- Capa de desenfoque -->
+    <div class="overlay" id="overlay"></div>
+    <script src="script.js"></script>
+  </body>
 </html>
