@@ -250,6 +250,27 @@ body {
 }
 
 /* === RESPONSIVE === */
+/* === RESPONSIVE === */
+
+/* Teléfonos: mínimo 2 columnas */
+@media (max-width: 767px) {
+  .catalogo {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 100px 16px 40px 16px;
+  }
+}
+
+/* Tablets / pantallas medianas: 3 columnas */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .catalogo {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 120px 30px 50px 30px;
+  }
+}
+
+/* Computadoras: 4 columnas */
 @media (min-width: 1024px) {
   .catalogo {
     grid-template-columns: repeat(4, 1fr);
