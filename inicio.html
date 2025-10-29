@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inicio - RELUX</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body class="inicio-body">
+    <div class="inicio-contenedor">
+      <img src="img/logo.jpeg" alt="Logo" class="inicio-logo" />
+      <h2 class="inicio-frase">Descubre tu esencia.</h2>
+      <p class="inicio-subfrase">Minimalismo, elegancia y autenticidad.</p>
+      <button class="inicio-boton" id="btn-empezar">Entrar</button>
+    </div>
+
+    <script>
+      const btn = document.getElementById("btn-empezar");
+      btn.addEventListener("click", () => {
+        document.body.classList.add("fade-out");
+        setTimeout(() => (window.location.href = "catalogo.html"), 500);
+      });
+    </script>
+  </body>
+</html>

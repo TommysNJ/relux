@@ -116,20 +116,3 @@ window.addEventListener('click', e => {
 });
 
 window.addEventListener('DOMContentLoaded', mostrarTodosLosProductos);
-
-// === INICIO (PANTALLA DE PRESENTACIÓN) ===
-const inicio = document.getElementById('inicio');
-const btnEmpezar = document.getElementById('btn-empezar');
-
-// 🚫 Bloquear scroll completamente al inicio
-document.body.classList.add('no-scroll');
-
-btnEmpezar.addEventListener('click', () => {
-  inicio.classList.add('oculto');
-
-  // ✅ Restaura scroll después de desaparecer
-  setTimeout(() => {
-    inicio.style.display = 'none';
-    document.body.classList.remove('no-scroll');
-  }, 600); // mismo tiempo que el fade-out
-});
