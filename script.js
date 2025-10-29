@@ -36,16 +36,37 @@ const productos = {
 };
 
 // Mostrar todos los productos
+// Mostrar TODOS los productos con animación
 function mostrarTodosLosProductos() {
-  catalogo.innerHTML = '';
-  Object.keys(productos).forEach(categoria => {
-    productos[categoria].forEach(prod => crearProducto(prod));
-  });
+  catalogo.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+  catalogo.style.opacity = '0';
+  catalogo.style.transform = 'translateY(20px) scale(0.98)';
 
-  // ✨ Transición suave al mostrar el catálogo
   setTimeout(() => {
-    catalogo.classList.add('show');
-  }, 100); // pequeño retraso para permitir el reflow
+    catalogo.innerHTML = '';
+
+    let delay = 0;
+    Object.keys(productos).forEach(categoria => {
+      productos[categoria].forEach(prod => {
+        const div = document.createElement('div');
+        div.classList.add('producto');
+        div.style.animation = `fadeInUp 0.5s ease forwards`;
+        div.style.animationDelay = `${delay * 0.07}s`;
+        div.innerHTML = `
+          <img src="${prod.imagen}" alt="${prod.titulo}">
+          <h3>${prod.titulo}</h3>
+          <p>${prod.precio}</p>
+        `;
+        div.addEventListener('click', () => abrirModal(prod));
+        catalogo.appendChild(div);
+        delay++;
+      });
+    });
+
+    void catalogo.offsetWidth;
+    catalogo.style.opacity = '1';
+    catalogo.style.transform = 'translateY(0) scale(1)';
+  }, 350);
 }
 
 function crearProducto(prod) {
@@ -61,13 +82,35 @@ function crearProducto(prod) {
 }
 
 function mostrarProductos(categoria) {
-  catalogo.classList.remove('show');
+  // 🔹 Aplica una transición de salida fluida
+  catalogo.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+  catalogo.style.opacity = '0';
+  catalogo.style.transform = 'translateY(20px) scale(0.98)';
+
+  // 🔹 Espera que la animación de salida termine antes de reemplazar el contenido
   setTimeout(() => {
     catalogo.innerHTML = '';
-    productos[categoria].forEach(prod => crearProducto(prod));
-    // ✨ vuelve a mostrar con transición
-    setTimeout(() => catalogo.classList.add('show'), 100);
-  }, 200);
+
+    // 🔹 Crea los nuevos productos
+    productos[categoria].forEach((prod, i) => {
+      const div = document.createElement('div');
+      div.classList.add('producto');
+      div.style.animation = `fadeInUp 0.5s ease forwards`;
+      div.style.animationDelay = `${i * 0.07}s`; // ⚡ efecto escalonado
+      div.innerHTML = `
+        <img src="${prod.imagen}" alt="${prod.titulo}">
+        <h3>${prod.titulo}</h3>
+        <p>${prod.precio}</p>
+      `;
+      div.addEventListener('click', () => abrirModal(prod));
+      catalogo.appendChild(div);
+    });
+
+    // 🔹 Reinicia y aplica animación de entrada global
+    void catalogo.offsetWidth; // fuerza reflow
+    catalogo.style.opacity = '1';
+    catalogo.style.transform = 'translateY(0) scale(1)';
+  }, 350);
 }
 
 // === MENÚ FLOTANTE IZQUIERDO ===
