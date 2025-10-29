@@ -28,7 +28,7 @@ body {
   padding: 12px 24px;
   z-index: 50;
 
-  background: rgba(26, 45, 92, 0.76); /* Igual al menú lateral */
+  background: rgba(26, 45, 92, 0.76);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(11.2px);
@@ -152,8 +152,8 @@ body {
 .catalogo {
   display: grid;
   gap: 20px;
-  padding: 120px 20px 50px 20px;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  padding: 130px 20px 50px 20px; /* Ajuste superior uniforme */
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
 }
 
 .producto {
@@ -250,23 +250,22 @@ body {
 }
 
 /* === RESPONSIVE === */
-/* === RESPONSIVE === */
 
-/* Teléfonos: mínimo 2 columnas */
+/* Todos los teléfonos (cualquier tamaño): 2 columnas */
 @media (max-width: 767px) {
   .catalogo {
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-    padding: 100px 16px 40px 16px;
+    gap: 18px;
+    padding: 130px 16px 40px 16px; /* Igual que desktop, consistente */
   }
 }
 
-/* Tablets / pantallas medianas: 3 columnas */
+/* Tablets: 3 columnas */
 @media (min-width: 768px) and (max-width: 1023px) {
   .catalogo {
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding: 120px 30px 50px 30px;
+    gap: 22px;
+    padding: 130px 30px 50px 30px;
   }
 }
 
@@ -275,7 +274,7 @@ body {
   .catalogo {
     grid-template-columns: repeat(4, 1fr);
     gap: 28px;
-    padding: 140px 60px;
+    padding: 130px 60px;
   }
 }
 
