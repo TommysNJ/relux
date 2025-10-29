@@ -152,8 +152,15 @@ body {
 .catalogo {
   display: grid;
   gap: 20px;
-  padding: 130px 20px 50px 20px; /* Ajuste superior uniforme */
+  padding: 130px 20px 50px 20px;
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.catalogo.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .producto {
@@ -192,7 +199,9 @@ body {
 
 /* === MODAL (MISMO ESTILO “LIQUID GLASS”) === */
 .modal {
-  display: none;
+  display: flex;
+  opacity: 0;
+  pointer-events: none;
   position: fixed;
   z-index: 60;
   top: 0;
@@ -203,6 +212,11 @@ body {
   align-items: center;
   backdrop-filter: blur(6px);
   background: rgba(0, 0, 0, 0.3);
+  transition: opacity 0.4s ease;
+}
+.modal.show {
+  opacity: 1;
+  pointer-events: all;
 }
 
 .modal-content {
@@ -212,6 +226,9 @@ body {
   backdrop-filter: blur(11.2px);
   -webkit-backdrop-filter: blur(11.2px);
   border: 1px solid rgba(255, 255, 255, 0.15);
+  transform: scale(0.9);
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
 
   padding: 24px;
   max-width: 420px;
@@ -219,6 +236,11 @@ body {
   text-align: center;
   color: #fff;
 }
+.modal.show .modal-content {
+  transform: scale(1);
+  opacity: 1;
+}
+
 .modal-content img {
   width: 100%;
   border-radius: 14px;
@@ -256,7 +278,7 @@ body {
   .catalogo {
     grid-template-columns: repeat(2, 1fr);
     gap: 18px;
-    padding: 130px 16px 40px 16px; /* Igual que desktop, consistente */
+    padding: 130px 16px 40px 16px;
   }
 }
 

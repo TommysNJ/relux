@@ -41,6 +41,11 @@ function mostrarTodosLosProductos() {
   Object.keys(productos).forEach(categoria => {
     productos[categoria].forEach(prod => crearProducto(prod));
   });
+
+  // ✨ Transición suave al mostrar el catálogo
+  setTimeout(() => {
+    catalogo.classList.add('show');
+  }, 100); // pequeño retraso para permitir el reflow
 }
 
 function crearProducto(prod) {
@@ -56,22 +61,27 @@ function crearProducto(prod) {
 }
 
 function mostrarProductos(categoria) {
-  catalogo.innerHTML = '';
-  productos[categoria].forEach(prod => crearProducto(prod));
+  catalogo.classList.remove('show');
+  setTimeout(() => {
+    catalogo.innerHTML = '';
+    productos[categoria].forEach(prod => crearProducto(prod));
+    // ✨ vuelve a mostrar con transición
+    setTimeout(() => catalogo.classList.add('show'), 100);
+  }, 200);
 }
 
 // === MENÚ FLOTANTE IZQUIERDO ===
 menuToggle.addEventListener('click', () => {
   menu.classList.add('active');
   overlay.classList.add('active');
-  menuToggle.classList.add('hidden'); 
+  menuToggle.classList.add('hidden');
   header.classList.add('hidden'); // 👈 Oculta el header
 });
 
 closeMenu.addEventListener('click', () => {
   menu.classList.remove('active');
   overlay.classList.remove('active');
-  menuToggle.classList.remove('hidden'); 
+  menuToggle.classList.remove('hidden');
   header.classList.remove('hidden'); // 👈 Muestra el header
 });
 
@@ -92,10 +102,12 @@ document.querySelectorAll('.menu li').forEach(item => {
   });
 });
 
-// Modal
+// === MODAL ===
 function abrirModal(prod) {
-  modal.style.display = 'flex';
+  // ✨ Animación suave
+  modal.classList.add('show');
   overlay.classList.add('active');
+
   document.getElementById('modal-img').src = prod.imagen;
   document.getElementById('modal-title').textContent = prod.titulo;
   document.getElementById('modal-desc').textContent = prod.descripcion;
@@ -103,16 +115,34 @@ function abrirModal(prod) {
   document.getElementById('modal-precio').textContent = prod.precio;
 }
 
-closeModal.addEventListener('click', () => {
-  modal.style.display = 'none';
-  overlay.classList.remove('active');
-});
-
+closeModal.addEventListener('click', cerrarModal);
 window.addEventListener('click', e => {
-  if (e.target === modal) {
-    modal.style.display = 'none';
-    overlay.classList.remove('active');
-  }
+  if (e.target === modal) cerrarModal();
 });
 
-window.addEventListener('DOMContentLoaded', mostrarTodosLosProductos);
+function cerrarModal() {
+  // ✨ Transición de salida suave
+  modal.classList.remove('show');
+  overlay.classList.remove('active');
+  // Espera el fin de la transición antes de ocultar del todo
+  setTimeout(() => {
+    modal.style.display = '';
+  }, 400);
+}
+
+// === CARGA INICIAL ===
+// === CARGA INICIAL ===
+window.addEventListener('DOMContentLoaded', () => {
+  // 1️⃣ Oculta header y catálogo al cargar
+  header.classList.add('hidden');
+  catalogo.classList.remove('show');
+
+  // 2️⃣ Crea los productos
+  mostrarTodosLosProductos();
+
+  // 3️⃣ Espera un instante y muestra ambos de forma sincronizada
+  setTimeout(() => {
+    header.classList.remove('hidden');
+    catalogo.classList.add('show');
+  }, 300); // puedes ajustar entre 150–300 ms según gusto
+});
