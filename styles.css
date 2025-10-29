@@ -12,7 +12,29 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   color: #f1f1f1;
-  background: rgba(217, 185, 155, 0.751);
+
+  background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.986) 0%,         /* toque de luz superior */
+      rgba(220, 213, 202, 0.25) 10%,       
+      rgb(250, 245, 245) 40%,        /* beige medio */
+      rgba(133, 123, 110, 0.95) 70%,        /* beige oscuro */
+      rgba(125, 95, 70, 1) 100%             /* tono base profundo */
+  ),
+  radial-gradient(
+      at top left,
+      rgba(154, 43, 43, 0.865) 0%,
+      rgba(142, 119, 100, 0.575) 70%
+  ),
+  radial-gradient(
+      at bottom right,
+      rgba(130, 100, 75, 0.5) 0%,
+      rgba(100, 48, 14, 0.9) 85%
+  );
+
+  background-blend-mode: soft-light, overlay;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 /* === HEADER (LIQUID GLASS OSCURO) === */
@@ -301,8 +323,9 @@ body {
 }
 
 /* === PANTALLA DE INICIO === */
+/* === FONDO DE LA PANTALLA DE INICIO (MISMO ESTILO Y COLORES DEL BODY) === */
+/* === FONDO DE LA PANTALLA DE INICIO (MISMO ESTILO Y COLORES DEL BODY) === */
 .inicio-body {
-  background: rgba(217, 185, 155, 0.85);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -310,7 +333,31 @@ body {
   margin: 0;
   overflow: hidden;
   transition: opacity 0.5s ease;
+
+  background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.986) 0%,         /* toque de luz superior */
+      rgba(220, 213, 202, 0.25) 10%,       
+      rgb(250, 245, 245) 40%,                /* beige medio */
+      rgba(133, 123, 110, 0.95) 70%,         /* beige oscuro */
+      rgba(125, 95, 70, 1) 100%              /* tono base profundo */
+  ),
+  radial-gradient(
+      at top left,
+      rgba(154, 43, 43, 0.865) 0%,           /* acento rojizo */
+      rgba(142, 119, 100, 0.575) 70%         /* fusión beige */
+  ),
+  radial-gradient(
+      at bottom right,
+      rgba(130, 100, 75, 0.5) 0%,            /* marrón medio */
+      rgba(100, 48, 14, 0.9) 85%             /* sombra profunda */
+  );
+
+  background-blend-mode: soft-light, overlay;
+  background-attachment: fixed;
+  background-size: cover;
 }
+
 .inicio-body.fade-out {
   opacity: 0;
 }
@@ -376,4 +423,48 @@ body {
     opacity: 1;
     transform: scale(1);
   }
+}
+
+/* === NUEVOS ESTILOS DE PRODUCTOS === */
+.producto h3 {
+  margin-top: 10px;
+  font-size: 1.05rem;
+  font-weight: 700; /* Marca */
+  color: #fff;
+}
+
+.producto .modelo {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #e0e0e0;
+  margin-top: 4px;
+}
+
+.producto .precio {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffffd3; /* precio más visible */
+  margin-top: 6px;
+}
+
+/* === MODAL DETALLADO === */
+#modal-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-top: 10px;
+  color: #fff;
+}
+
+#modal-precio {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffffffd3;
+  margin: 8px 0;
+}
+
+#modal-desc,
+#modal-materiales {
+  font-size: 1rem;
+  color: #e5e5e5;
+  margin-top: 4px;
 }
