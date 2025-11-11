@@ -146,12 +146,21 @@ menuToggle.addEventListener('click', () => {
   header.classList.add('hidden');
 });
 
-closeMenu.addEventListener('click', () => {
+closeMenu.addEventListener('click', cerrarMenu);
+
+function cerrarMenu() {
   menu.classList.remove('active');
   overlay.classList.remove('active');
   menuToggle.classList.remove('hidden');
   header.classList.remove('hidden');
-});
+
+  // 🧹 Limpieza: asegura que el overlay se desactive totalmente
+  setTimeout(() => {
+    overlay.classList.remove('active');
+    overlay.style.backdropFilter = 'blur(0)';
+    overlay.style.background = 'rgba(0,0,0,0)';
+  }, 400);
+}
 
 document.querySelectorAll('.menu li').forEach(item => {
   item.addEventListener('click', () => {
@@ -214,7 +223,12 @@ window.addEventListener('click', e => {
 function cerrarModal() {
   modal.classList.remove('show');
   overlay.classList.remove('active');
+
+  // 🧹 Limpieza: asegura que el overlay se oculte al 100%
   setTimeout(() => {
+    overlay.classList.remove('active');
+    overlay.style.backdropFilter = 'blur(0)';
+    overlay.style.background = 'rgba(0,0,0,0)';
     modal.style.display = '';
   }, 400);
 }

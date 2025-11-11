@@ -277,6 +277,13 @@ body {
   backdrop-filter: blur(6px);
   background: rgba(0, 0, 0, 0.25);
   pointer-events: all;
+  transition: all 0.3s ease;
+}
+
+.overlay:not(.active) {
+  backdrop-filter: blur(0);
+  background: rgba(0, 0, 0, 0);
+  pointer-events: none;
 }
 
 /* === RESPONSIVE === */
@@ -467,6 +474,7 @@ body {
 .modal,
 .menu {
   padding-bottom: env(safe-area-inset-bottom);
+  height: calc(100dvh - env(safe-area-inset-bottom));
 }
 
 /* Asegura que el contenido interno no se corte por el borde inferior */
