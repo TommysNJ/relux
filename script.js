@@ -194,6 +194,16 @@ function abrirModal(prod) {
       ${materialesFormateados}
     </div>
   `;
+
+  // 🟢 NUEVO: Configurar WhatsApp dinámico
+  const numeroWhatsApp = "593998949534"; // Cambia por tu número (Ecuador → sin +, ej: 59398xxxxxxx)
+  const mensaje = `Hola, quiero comprar el modelo ${prod.modelo} de ${prod.marca} que vi en su catálogo. Precio: ${prod.precio}`;
+  const link = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
+
+  const btnWhatsApp = document.getElementById('modal-whatsapp');
+  btnWhatsApp.onclick = () => {
+    window.open(link, "_blank");
+  };
 }
 
 closeModal.addEventListener('click', cerrarModal);

@@ -442,3 +442,23 @@ body {
   color: #e5e5e5;
   margin-top: 4px;
 }
+
+/* === BOTÓN WHATSAPP === */
+.whatsapp-btn {
+  background: #25d366;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  margin-top: 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.whatsapp-btn:hover {
+  background: #1ebe5d;
+  transform: scale(1.05);
+}
