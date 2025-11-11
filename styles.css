@@ -109,7 +109,7 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   padding-top: 12px;
-  padding-bottom: env(safe-area-inset-bottom, 0);
+  padding-bottom: 24px;
 }
 .menu.active {
   opacity: 1;
@@ -206,21 +206,23 @@ body {
 }
 
 /* === MODAL (MISMO ESTILO “LIQUID GLASS”) === */
-/* === MODAL (con corrección de área segura y sin franja inferior) === */
 .modal {
   display: flex;
   opacity: 0;
   pointer-events: none;
   position: fixed;
-  inset: 0; /* sustituye top/left/width/height */
-  height: 100dvh; /* usa altura visible dinámica real */
+  z-index: 60;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   justify-content: center;
   align-items: center;
   backdrop-filter: blur(6px);
   background: rgba(0, 0, 0, 0.3);
   transition: opacity 0.4s ease;
-  padding-bottom: env(safe-area-inset-bottom, 0); /* margen seguro inferior */
 }
+
 .modal.show {
   opacity: 1;
   pointer-events: all;
@@ -259,11 +261,13 @@ body {
   color: #fff;
 }
 
-/* === OVERLAY corregido === */
+/* === OVERLAY === */
 .overlay {
   position: fixed;
-  inset: 0;
-  height: 100dvh;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   backdrop-filter: blur(0);
   background: rgba(0, 0, 0, 0);
   transition: backdrop-filter 0.3s ease, background 0.3s ease;
@@ -458,8 +462,4 @@ body {
 .whatsapp-btn:hover {
   background: #1ebe5d;
   transform: scale(1.05);
-}
-
-html, body {
-  background-color: #d7cab8; /* tu color base */
 }
