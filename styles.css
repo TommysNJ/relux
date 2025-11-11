@@ -109,7 +109,7 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   padding-top: 12px;
-  padding-bottom: 24px;
+  padding-bottom: env(safe-area-inset-bottom, 0);
 }
 .menu.active {
   opacity: 1;
@@ -206,21 +206,20 @@ body {
 }
 
 /* === MODAL (MISMO ESTILO “LIQUID GLASS”) === */
+/* === MODAL (con corrección de área segura y sin franja inferior) === */
 .modal {
   display: flex;
   opacity: 0;
   pointer-events: none;
   position: fixed;
-  z-index: 60;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0; /* sustituye top/left/width/height */
+  height: 100dvh; /* usa altura visible dinámica real */
   justify-content: center;
   align-items: center;
   backdrop-filter: blur(6px);
   background: rgba(0, 0, 0, 0.3);
   transition: opacity 0.4s ease;
+  padding-bottom: env(safe-area-inset-bottom, 0); /* margen seguro inferior */
 }
 .modal.show {
   opacity: 1;
@@ -260,13 +259,11 @@ body {
   color: #fff;
 }
 
-/* === OVERLAY === */
+/* === OVERLAY corregido === */
 .overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
+  height: 100dvh;
   backdrop-filter: blur(0);
   background: rgba(0, 0, 0, 0);
   transition: backdrop-filter 0.3s ease, background 0.3s ease;
@@ -277,13 +274,6 @@ body {
   backdrop-filter: blur(6px);
   background: rgba(0, 0, 0, 0.25);
   pointer-events: all;
-  transition: all 0.3s ease;
-}
-
-.overlay:not(.active) {
-  backdrop-filter: blur(0);
-  background: rgba(0, 0, 0, 0);
-  pointer-events: none;
 }
 
 /* === RESPONSIVE === */
@@ -470,15 +460,6 @@ body {
   transform: scale(1.05);
 }
 
-/* === FIX: Espacio inferior seguro para iPhone en modal y menú === */
-.modal,
-.menu {
-  padding-bottom: env(safe-area-inset-bottom);
-  height: calc(100dvh - env(safe-area-inset-bottom));
-}
-
-/* Asegura que el contenido interno no se corte por el borde inferior */
-.modal-content,
-.menu ul {
-  margin-bottom: env(safe-area-inset-bottom);
+html, body {
+  background-color: #d7cab8; /* tu color base */
 }
