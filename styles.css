@@ -9,7 +9,7 @@
 /* === FONDO BASE === */
 body {
   position: relative;
-  min-height: 100vh;
+  min-height: 100dvh; /* ✅ evita que se oculte tras la barra inferior */
   overflow-x: hidden;
   color: #f1f1f1;
 
@@ -18,6 +18,9 @@ body {
   background-blend-mode: soft-light, overlay;
   background-attachment: fixed;
   background-size: cover;
+
+  /* ✅ asegura espacio visible bajo la barra inferior en iPhone */
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 /* === HEADER (LIQUID GLASS OSCURO) === */
@@ -310,7 +313,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100dvh; /* ✅ altura dinámica real */
   margin: 0;
   overflow: hidden;
   transition: opacity 0.5s ease;
@@ -321,6 +324,8 @@ body {
   background-blend-mode: soft-light, overlay;
   background-attachment: fixed;
   background-size: cover;
+
+  padding-bottom: env(safe-area-inset-bottom); /* ✅ margen inferior seguro */
 }
 
 .inicio-body.fade-out {
