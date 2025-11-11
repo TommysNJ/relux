@@ -13,30 +13,12 @@ body {
   overflow-x: hidden;
   color: #f1f1f1;
 
-  background: linear-gradient(
-      135deg, /* ← Diagonal: de arriba izquierda a abajo derecha */
-      rgba(230, 210, 185, 0.95) 0%,     /* beige cálido inicial */
-      rgba(250, 247, 242, 1) 25%,       /* blanco suave */
-      rgba(205, 200, 195, 0.9) 55%,     /* gris medio */
-      rgba(240, 230, 220, 0.95) 80%,    /* beige claro */
-      rgba(217, 185, 155, 1) 100%       /* beige profundo */
-  ),
-  radial-gradient(
-      at top left,
-      rgba(255, 255, 255, 0.25) 0%,     /* luz difusa */
-      rgba(200, 190, 170, 0) 80%
-  ),
-  radial-gradient(
-      at bottom right,
-      rgba(200, 180, 160, 0.35) 0%,     /* brillo cálido */
-      rgba(140, 120, 100, 0.8) 90%
-  );
+  background: #d7cab8;
 
   background-blend-mode: soft-light, overlay;
   background-attachment: fixed;
   background-size: cover;
 }
-
 
 /* === HEADER (LIQUID GLASS OSCURO) === */
 .header {
@@ -334,24 +316,7 @@ body {
   transition: opacity 0.5s ease;
   color: #f1f1f1;
 
-  background: linear-gradient(
-      135deg, /* ↘️ diagonal: arriba izquierda → abajo derecha */
-      rgba(230, 210, 185, 0.95) 0%,     /* beige cálido inicial */
-      rgba(250, 247, 242, 1) 25%,       /* blanco suave */
-      rgba(205, 200, 195, 0.9) 55%,     /* gris medio */
-      rgba(240, 230, 220, 0.95) 80%,    /* beige claro */
-      rgba(217, 185, 155, 1) 100%       /* beige profundo */
-  ),
-  radial-gradient(
-      at top left,
-      rgba(255, 255, 255, 0.25) 0%,     /* brillo superior */
-      rgba(200, 190, 170, 0) 80%
-  ),
-  radial-gradient(
-      at bottom right,
-      rgba(200, 180, 160, 0.35) 0%,     /* reflejo inferior */
-      rgba(140, 120, 100, 0.8) 90%
-  );
+  background: #d7cab8;
 
   background-blend-mode: soft-light, overlay;
   background-attachment: fixed;
