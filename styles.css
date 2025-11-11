@@ -36,7 +36,7 @@ body {
   padding: 12px 24px;
   z-index: 50;
 
-  background: rgba(26, 45, 92, 0.76);
+  background: rgba(26, 45, 92, 0.903);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(11.2px);
@@ -172,7 +172,7 @@ body {
 }
 
 .producto {
-  background: rgba(26, 45, 92, 0.76);
+  background: rgba(26, 45, 92, 0.903);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(11.2px);
