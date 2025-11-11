@@ -462,3 +462,15 @@ body {
   background: #1ebe5d;
   transform: scale(1.05);
 }
+
+/* === FIX: Espacio inferior seguro para iPhone en modal y menú === */
+.modal,
+.menu {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* Asegura que el contenido interno no se corte por el borde inferior */
+.modal-content,
+.menu ul {
+  margin-bottom: env(safe-area-inset-bottom);
+}
