@@ -10,13 +10,13 @@ const header = document.querySelector('.header'); // ✅ Header
 // ===================== PRODUCTOS =====================
 const productos = {
   nike: [
-    { marca: 'Nike', modelo: 'Air Jordan 1 Retro OG x Travis Scott High "Mocha"', precio: '$160', imagen: 'img/air_jordan1_travis_mocha.png', materiales: `• Empeine/base en cuero blanco.\n• Overlays en ante / nobuck café “Mocha”.\n• Swoosh XL invertido en cuero negro.` },
-    { marca: 'Nike', modelo: 'Air Jordan 1 Retro High "Obsidian / UNC"', precio: '$155', imagen: 'img/air_jordan1_obsidian_unc.png', materiales: `• Upper construido totalmente en cuero (blanco Sail + paneles Obsidian + detalles University Blue).` },
-    { marca: 'Nike', modelo: 'Air Jordan 1 High OG Dior ("Air Dior")', precio: '$1500', imagen: 'img/air_jordan1_dior.png', materiales: `• Cuero/calfskin italiano gris y blanco de primera calidad, hecho en Italia, con bordes pintados a mano.\n• Swoosh en jacquard Dior Oblique.\n• Suela translúcida con branding Dior.` },
-    { marca: 'Nike', modelo: 'Air Jordan 1 High OG "Hyper Royal"', precio: '$170', imagen: 'img/air_jordan1_hyper_royal.png', materiales: `• Base en cuero blanco.\n• Overlays en gamuza / ante azul desgastado (“fading blue suede”).\n• Acentos gris claro en Swoosh y cuello.` },
-    { marca: 'Nike', modelo: 'Air Jordan 3 "J Balvin - Rio"', precio: '$230', imagen: 'img/air_jordan3_jbalvin_rio.png', materiales: `• Upper en cuero negro.\n• Overlays clásicos tipo “elephant print”.\n• Mediasuela con degradado Solar Flare / Crimson / Abyss.` },
-    { marca: 'Nike', modelo: 'Air Jordan 3 "Black Cat"', precio: '$200', imagen: 'img/air_jordan3_blackcat.png', materiales: `• Capellada en nubuck negro / gamuza sintética negra.\n• Mudguard en charol negro.\n• Overlays elephant print gris oscuro.\n• Suela con unidad Air visible.` },
-    { marca: 'Nike', modelo: 'Air Jordan 3 Retro SE "Muslin"', precio: '$210', imagen: 'img/air_jordan3_muslin.png', materiales: '' },
+    { marca: 'Nike', modelo: 'Air Jordan 1 Retro OG x Travis Scott High "Mocha"', precio: '$160', imagen: 'img/Nike Air Jordan 1 Retro OG x Travis Scott High Mocha.png', materiales: `• Empeine/base en cuero blanco.\n• Overlays en ante / nobuck café “Mocha”.\n• Swoosh XL invertido en cuero negro.` },
+    { marca: 'Nike', modelo: 'Air Jordan 1 Retro High "Obsidian / UNC"', precio: '$155', imagen: 'img/Air Jordan 1 Retro High Obsidian UNC.png', materiales: `• Upper construido totalmente en cuero (blanco Sail + paneles Obsidian + detalles University Blue).` },
+    { marca: 'Nike', modelo: 'Air Jordan 1 High OG Dior ("Air Dior")', precio: '$1500', imagen: 'img/ Air Jordan 1 High OG Dior.png', materiales: `• Cuero/calfskin italiano gris y blanco de primera calidad, hecho en Italia, con bordes pintados a mano.\n• Swoosh en jacquard Dior Oblique.\n• Suela translúcida con branding Dior.` },
+    { marca: 'Nike', modelo: 'Air Jordan 1 High OG "Hyper Royal"', precio: '$170', imagen: 'img/Air Jordan 1 High OG “Hyper Royal”.png', materiales: `• Base en cuero blanco.\n• Overlays en gamuza / ante azul desgastado (“fading blue suede”).\n• Acentos gris claro en Swoosh y cuello.` },
+    { marca: 'Nike', modelo: 'Air Jordan 3 "J Balvin - Rio"', precio: '$230', imagen: 'img/Air Jordan 3 "J Balvin Rio".png', materiales: `• Upper en cuero negro.\n• Overlays clásicos tipo “elephant print”.\n• Mediasuela con degradado Solar Flare / Crimson / Abyss.` },
+    { marca: 'Nike', modelo: 'Air Jordan 3 "Black Cat"', precio: '$200', imagen: 'img/Air Jordan 3 black Cat.png', materiales: `• Capellada en nubuck negro / gamuza sintética negra.\n• Mudguard en charol negro.\n• Overlays elephant print gris oscuro.\n• Suela con unidad Air visible.` },
+    { marca: 'Nike', modelo: 'Air Jordan 3 Retro SE "Muslin"', precio: '$210', imagen: 'img/Air Jordan 3 Retro.png', materiales: '' },
     { marca: 'Nike', modelo: 'Air Jordan 4 Retro "Military Black"', precio: '$220', imagen: 'img/air_jordan4_military_black.png', materiales: '' },
     { marca: 'Nike', modelo: 'Air Jordan 4 Retro "Red Cement"', precio: '$230', imagen: 'img/air_jordan4_red_cement.png', materiales: '' },
     { marca: 'Nike', modelo: 'Air Jordan 4 Retro "Seafoam"', precio: '$230', imagen: 'img/air_jordan4_seafoam.png', materiales: '' },
@@ -229,3 +229,4 @@ window.addEventListener('DOMContentLoaded', () => {
     catalogo.classList.add('show');
   }, 300);
 });
+
